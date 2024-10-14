@@ -69,7 +69,6 @@ function Home() {
                 Discover Your Next Favorite Book:
             </h1>
 
-            <h1>KRenare</h1>
       <Carousel>
           {books.map((b) =>
                  (
