@@ -1,7 +1,10 @@
-// ./Pages/AboutUs.js
+import React, {useEffect, useState} from "react";
 
-function AboutUs() {
-    return <div>About Us Page</div>;
+
+const Aboutus = () => {
+
+    
 }
+
 
 export default AboutUs;

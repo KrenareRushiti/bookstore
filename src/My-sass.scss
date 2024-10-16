@@ -1,5 +1,11 @@
 @use 'Variables' as v;
 .Home {
+
+    .title{
+        color: red;
+        background-color: black;
+        font-size: 32px;
+    }
     .Carousel {
         .carouselimg {
             filter: saturate(50%);

@@ -54,7 +54,8 @@ function Home() {
 
       return (
         <>
-
+        <div className="Home">
+          <h1 className='title'>Shyhrete</h1>
 <h1 className='title' style={{
                 textAlign: "center", 
                 marginTop: "20px", 
@@ -111,6 +112,9 @@ function Home() {
         </Col>
       ))}
     </Row>
+    
+    </div>
+
     </>
     );
 } 
