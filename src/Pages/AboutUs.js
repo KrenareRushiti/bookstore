@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React from 'react'
 
-
-const Aboutus = () => {
-
-    
+const AboutUs = () => {
+  return (
+    <div>
+      <h1>Test</h1>
+    </div>
+  )
 }
 
-
-export default AboutUs;
+export default AboutUs

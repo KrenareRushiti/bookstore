@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Card, Row, Col } from 'react-bootstrap';
 
-
-
-
-
 const Quotes = () => {
-  const [data, setData] = useState([]);
+  const [quotes, setQuotes] = useState("");
 
   const getApiData = async () => {
-    const response = await fetch ("https://api.freeapi.app/#/%F0%9F%93%A2%20Public%20APIs/getQuotes").then((res)=>res.json());
-    console.log ("Api data: ", response);
-    setData (response);
+    const response = await fetch("https://api.freeapi.app/api/v1/public/quotes").then((res)=>res.json());
+    // console.log ("Api data: ", response);
+    setQuotes(response);
   };
   
   useEffect (() => {
     getApiData();
   }, [] );
+
 
   //"author": "Charles Dickens", "authorSlug": ""","content: "",
   //"dateAdded": "2023-04-14",
@@ -25,18 +22,16 @@ const Quotes = () => {
   //"length": 67,
   //"tags": []
 
-
-
-
+  console.log("QUOTES: ", quotes?.data?.data)
   return (
     <>
       <Container>
         <Row>
           {
-            data && data.map((d) =>  {
+            quotes && quotes.data.data.map((d) =>  (
 
-              <Col sm={12} md={6} lg={6}>
-          <     Card>
+              <Col sm={12} md={6} lg={6} key={d.id}>
+               <Card>
                   <Card.Header>Quote</Card.Header>
                      <Card.Body>
                           <blockquote className="blockquote mb-0">
@@ -51,7 +46,7 @@ const Quotes = () => {
                     </Card.Body>
                   </Card>
                 </Col>
-            })
+            ))
           }
         </Row>
     </Container>
