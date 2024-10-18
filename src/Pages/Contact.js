@@ -2,18 +2,22 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 
 const Contact = () => {
-  const [quotes, setQuotes] = useState([]);
+  const [books, setBooks] = useState([]);
 
+  // Fetch API data
   const getApiData = async () => {
     try {
       const response = await fetch(
         "https://api.freeapi.app/api/v1/public/quotes"
       ).then((res) => res.json());
-      // Inspect the response structure
-      console.log("API data: ", response);
-      setQuotes(response?.data?.data || []); // Adjusting for structure
+
+      // Debugging: Check the structure of the fetched data
+      console.log("API response: ", response);
+
+      // Ensure correct data structure
+      setBooks(response?.data?.data || []); // Adjust based on the structure
     } catch (error) {
-      console.error("Error fetching quotes:", error);
+      console.error("Error fetching books:", error);
     }
   };
 
@@ -21,6 +25,7 @@ const Contact = () => {
     getApiData();
   }, []);
 
+  // Slick slider settings
   const settings = {
     dots: true,
     infinite: true,
@@ -33,13 +38,32 @@ const Contact = () => {
 
   return (
     <div className="slider-container">
-      <Slider {...settings}>
-        {quotes.map((quote, index) => (
-          <div key={index}>
-            <h3>{quote.quoteText}</h3> {/* Use actual quote data */}
-          </div>
-        ))}
-      </Slider>
+      {/* Ensure the books array is not empty before rendering */}
+      {books.length > 0 ? (
+        <Slider {...settings}>
+          {books.map((book, index) => (
+            <div key={index} className="book-slide">
+              {/* Safely check for volumeInfo and imageLinks */}
+              {book?.volumeInfo?.imageLinks?.thumbnail ? (
+                <img
+                  src={book.volumeInfo.imageLinks.thumbnail}
+                  alt={book.volumeInfo.title}
+                  style={{ width: "100px", height: "150px" }}
+                />
+              ) : (
+                <div>No Image Available</div>
+              )}
+              <h3>{book?.volumeInfo?.title || "No Title Available"}</h3>
+              <p>{book?.volumeInfo?.subtitle || "No Subtitle Available"}</p>
+              <p>
+                By: {book?.volumeInfo?.authors?.join(", ") || "Unknown Author"}
+              </p>
+            </div>
+          ))}
+        </Slider>
+      ) : (
+        <p>Loading books...</p>
+      )}
     </div>
   );
 };

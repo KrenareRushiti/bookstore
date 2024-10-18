@@ -56,7 +56,7 @@ function Home() {
         <>
         <div className="Home">
           <h1 className='title'>Shyhrete</h1>
-<h1 className='title' style={{
+            <h1 className='title' style={{
                 textAlign: "center", 
                 marginTop: "20px", 
                 marginBottom: "20px",
@@ -97,7 +97,7 @@ function Home() {
             }}>Recommended books</p>
 
       <Row xs={1} md={4} className="g-4">
-      {recommendedBooks.map((rs) => (
+      {recommendedBooks.map((r) => (
         <Col key={r.id}>
           <Card>
             <Card.Img className = "cardImg" variant="top" src={r.img} alt='' style={{height: "200px"}}/>
