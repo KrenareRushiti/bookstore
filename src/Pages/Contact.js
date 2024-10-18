@@ -1,74 +1,47 @@
-import { Carousel, Card, Container, Row, Col, Button } from 'react-bootstrap';
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from "react";
+import Slider from "react-slick";
 
 const Contact = () => {
-    const [quotes, setQuotes] = useState([]);
+  const [quotes, setQuotes] = useState([]);
 
-    const getApiData = async () => {
-        try {
-            const response = await fetch("https://api.freeapi.app/api/v1/public/quotes");
-            const data = await response.json();
-            console.log("API Data:", data); // Check API response structure
-            setQuotes(data.data.data); // Accessing quotes array directly
-        } catch (error) {
-            console.error("Error fetching API data", error);
-        }
-    };
-
-    useEffect(() => {
-        getApiData();
-    }, []);
-
-    const groupedQuotes = [];
-    const itemsPerSlide = 3; // Number of cards per slide
-
-    for (let i = 0; i < quotes.length; i += itemsPerSlide) {
-        groupedQuotes.push(quotes.slice(i, i + itemsPerSlide));
+  const getApiData = async () => {
+    try {
+      const response = await fetch(
+        "https://api.freeapi.app/api/v1/public/quotes"
+      ).then((res) => res.json());
+      // Inspect the response structure
+      console.log("API data: ", response);
+      setQuotes(response?.data?.data || []); // Adjusting for structure
+    } catch (error) {
+      console.error("Error fetching quotes:", error);
     }
+  };
 
-    return (
-        <>
-            <Container>
-                <Carousel>
-                    {
-                        groupedQuotes.map((group, idx) => (
-                            <Carousel.Item key={idx}>
-                                <Row className="justify-content-center">
-                                    {
-                                        group.map((d) => (
-                                            <Col sm={12} md={6} lg={4} key={d.id}>
-                                                <Card style={{ width: '18rem' }}>
-                                                    <Card.Img variant="top" src="https://via.placeholder.com/150" alt="Placeholder image" />
-                                                    <Card.Body>
-                                                        <Card.Title>{d.quote}</Card.Title>
-                                                        <Card.Text>
-                                                            <strong>- {d.author}</strong>
-                                                        </Card.Text>
-                                                        <Button variant="primary">Read more</Button>
-                                                    </Card.Body>
-                                                </Card>
-                                            </Col>
-                                        ))
-                                    }
-                                </Row>
-                            </Carousel.Item>
-                        ))
-                    }
+  useEffect(() => {
+    getApiData();
+  }, []);
 
-                    {/* Carousel Navigation Controls */}
-                    <Carousel.Prev>
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </Carousel.Prev>
-                    
-                    <Carousel.Next>
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </Carousel.Next>
-                </Carousel>
-            </Container>
-        </>
-    );
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+  };
+
+  return (
+    <div className="slider-container">
+      <Slider {...settings}>
+        {quotes.map((quote, index) => (
+          <div key={index}>
+            <h3>{quote.quoteText}</h3> {/* Use actual quote data */}
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
 };
 
 export default Contact;

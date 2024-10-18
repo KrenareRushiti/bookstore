@@ -97,7 +97,7 @@ function Home() {
             }}>Recommended books</p>
 
       <Row xs={1} md={4} className="g-4">
-      {recommendedBooks.map((r, idx) => (
+      {recommendedBooks.map((rs) => (
         <Col key={r.id}>
           <Card>
             <Card.Img className = "cardImg" variant="top" src={r.img} alt='' style={{height: "200px"}}/>
@@ -118,7 +118,4 @@ function Home() {
     </>
     );
 } 
-    
-
-
 export default Home;
