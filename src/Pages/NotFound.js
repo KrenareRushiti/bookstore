@@ -1,7 +1,11 @@
-// ./Pages/NotFound.js
+import React from 'react'
 
-function NotFound() {
-    return <div>404 - Not Found</div>;
+const NotFound = () => {
+  return (
+    <div>
+      <h1 className='helllo'>hello</h1>
+    </div>
+  )
 }
 
-export default NotFound;
+export default NotFound

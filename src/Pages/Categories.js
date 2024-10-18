@@ -94,7 +94,7 @@ const Categories = () => {
         
     ];
 
-
+  
   return (
     <>
 
@@ -120,7 +120,7 @@ const Categories = () => {
                 
                 Computers & Technology
             </h1>
-          <Row xs={1} md={6} className="g-4">
+        <Row xs={1} md={6} className="g-4">
           {booksTwo.map((r,) => (
             <Col key={r.id}>
               <Card>

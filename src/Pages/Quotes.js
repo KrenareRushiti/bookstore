@@ -30,7 +30,7 @@ const Quotes = () => {
           {
             quotes && quotes.data.data.map((d) =>  (
 
-              <Col sm={12} md={6} lg={6} key={d.id}>
+              <Col sm={12} md={6} lg={6} key={d.id} className='my-3'>
                <Card>
                   <Card.Header>Quote</Card.Header>
                      <Card.Body>
