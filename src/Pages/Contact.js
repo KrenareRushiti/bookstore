@@ -2,12 +2,12 @@ import React from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+//import Col from 'react-bootstrap/Col';
+//import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Container } from 'react-bootstrap';
-import 'My-sass.scss'
+import './My-sass.scss'
 
 
 const Contact = () => {
