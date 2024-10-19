@@ -47,3 +47,26 @@
   width: 50%;
   height: 0%;
 }
+.slick-prev, .slick-next {
+  z-index: 1; /* Shto prioritet që të jenë të dukshme mbi elementët e tjerë */
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5); /* Një ngjyrë transparente për shigjetat */
+  border-radius: 50%; /* Forma e rrumbullakosur për butonat */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 30px;
+  color: white; /* Ngjyra e shigjetave */
+}
+
+.slick-prev {
+  left: -60px; /* Pozicioni për shigjetën e majtë */
+}
+
+.slick-next {
+  right: -60px; /* Pozicioni për shigjetën e djathtë */
+}
