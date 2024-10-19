@@ -5,7 +5,7 @@ import AboutUs from "./Pages/AboutUs.js";
 import NotFound from "./Pages/NotFound.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './My-sass.scss';
+import './Pages/My-sass.scss';
 import Categories from "./Pages/Categories.js";
 import Quotes from "./Pages/Quotes.js";
 
