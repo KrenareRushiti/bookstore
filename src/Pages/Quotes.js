@@ -25,7 +25,7 @@ const Quotes = () => {
   console.log("QUOTES: ", quotes?.data?.data)
   return (
     <>
-      <Container>
+      <Container className="quotes-container">
         <Row>
           {
             quotes && quotes.data.data.map((d) =>  (

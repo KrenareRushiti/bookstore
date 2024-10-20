@@ -40,14 +40,14 @@ const Contact = () => {
         id: 4,
         title: "IRREPLACEABLE",
         Author: "Pascal Bornet ",
-        description: "Better understand AI, where it’s going, and what you need to look out for to survive",
+        description: "Discover techniques to boost your career using AI without losing your job",
         img: "https://m.media-amazon.com/images/I/71Sk19m140L._SY522_.jpg",
     },
     {
         id: 5,
         title: "Why Machines Learn",
         Author: " Anil Ananthaswamy",
-        description: "A rich, narrative explanation of the mathematics that has brought us machine learning",
+        description: "Explanation of the mathematics that has brought machine learning",
         img: "https://m.media-amazon.com/images/I/81ZtMfYNTeL._SY522_.jpg",
     },
     {
@@ -68,7 +68,7 @@ const Contact = () => {
         id: 8,
         title: "Character Limit",
         Author: "Kate Conger",
-        description:"This is the defining story of our time told with uncommon style and peerless rigor.",
+        description:"offers a telling lesson in the cost of getting everything you want.",
         img: "https://m.media-amazon.com/images/I/81wKyq40uDL._SX385_.jpg",
     },
     {
@@ -100,14 +100,14 @@ const Contact = () => {
         id: 6,
         title: "How Politics Works",
         Author: "DK",
-        description:"Explaining political ideas on a conceptual level, entries explore how they apply to governments, movements, throughout history",
+        description:"Explaining political ideas on a conceptual level, entries explore how they apply to governments, movements, throughout history along with 21st-century examples",
         img: "https://m.media-amazon.com/images/I/719ifGBqH-L._SY522_.jpg",
     },
     {
         id: 7,
         title: "Learning to Disagree",
         Author: "John D. Inazu",
-        description: "help us handle daily encounters and lifelong relationships with those who see life very differently than we do",
+        description: "Reveals the surprising path to learning how to disagree in ways that build new bridges with our neighbors, coworkers, loved ones, and help us find better ways ",
         img: "https://m.media-amazon.com/images/I/71BSWSXC7AL._SY522_.jpg",
     },
     {
@@ -159,7 +159,7 @@ const Contact = () => {
         id: 8,
         title: "The Safety Anarchist",
         Author: "Sidney Dekker",
-        description: "Over the past two decades, the number of safety rules and statutes has exploded, and organizations themselves",
+        description: "It is time for Safety Anarchists: people who trust people more than process",
         img:"https://m.media-amazon.com/images/I/61eycfxnasL._SY522_.jpg",
     }, 
     {
@@ -177,6 +177,7 @@ const Contact = () => {
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
+    
   };
 
   return (
@@ -220,8 +221,8 @@ const Contact = () => {
         </div>
         <h1 className='titleTwo' style={{
                 textAlign: "center", 
-                marginTop: "20px", 
-                marginBottom: "20px",
+                marginTop: "40px", 
+                marginBottom: "40px",
                 fontSize: "2.5rem",  
                 color: "black", 
                 letterSpacing: "2px",
@@ -256,8 +257,8 @@ const Contact = () => {
         </div>
         <h1 className='titleTwo' style={{
                 textAlign: "center", 
-                marginTop: "20px", 
-                marginBottom: "20px",
+                marginTop: "40px", 
+                marginBottom: "40px",
                 fontSize: "2.5rem",  
                 color: "black", 
                 letterSpacing: "2px",

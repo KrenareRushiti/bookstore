@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import { Container } from 'react-bootstrap';
 //import 'My-sass.scss';
 
 function Home() {
@@ -54,6 +55,7 @@ function Home() {
 
       return (
         <>
+        <Container>
           <div className='Home'>
             <h1 className='title' style={{
                 textAlign: "center", 
@@ -112,6 +114,7 @@ function Home() {
       ))}
     </Row>
     </div>
+    </Container>
     </>
     );
 } 

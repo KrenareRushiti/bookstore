@@ -33,19 +33,15 @@
         width: 90%;
         display: flex;
         flex-direction: column;
-        gap: 50rem;
+        justify-content: space-evenly;
+        gap: 100rem;
+        margin-left: 5%;
+        margin-bottom: 2%;
     }
-
-        .card.text {
-
-            height: min-content;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-
-        }
     }
+    .slick-slide > div {
+
+        margin: 0 10px; }
     
     .titleName {
         text-Align: center, 
@@ -58,3 +54,60 @@
         font-Family "cursive",
     }
 
+    //Kodi ne vijim eshte per cardat ne quotes.js
+    .quotes-container {
+        margin-top: 20px;
+        
+        .card {
+          background-color: #f8f9fa;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          
+          .card-header {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            font-size: 1.25rem;
+          }
+      
+          .card-body {
+            padding: 1.5rem;
+            font-family: 'Georgia', serif;
+      
+            .blockquote {
+              font-style: italic;
+      
+              p {
+                font-size: 1.15rem;
+                line-height: 1.6;
+              }
+      
+              .blockquote-footer {
+                margin-top: 0.5rem;
+                font-size: 0.875rem;
+                color: #6c757d;
+      
+                cite {
+                  font-weight: bold;
+                  font-style: normal;
+                }
+              }
+            }
+          }
+        }
+      
+        .col {
+          margin-bottom: 20px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .quotes-container {
+          .card {
+            .blockquote p {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      
