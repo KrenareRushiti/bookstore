@@ -1,10 +1,8 @@
 @use 'Variables' as v;
 
 .Home {
-    .title {
-        color: red;
-        background-color: v.$font-color;
-        font-size: 32px;
+    .me-auto, .secondary, .outline-danger, .vr {
+        margin-bottom: 40px;
     }
 
     .Carousel {
@@ -54,60 +52,6 @@
         font-Family "cursive",
     }
 
-    //Kodi ne vijim eshte per cardat ne quotes.js
-    .quotes-container {
-        margin-top: 20px;
-        
-        .card {
-          background-color: #f8f9fa;
-          border-radius: 10px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          
-          .card-header {
-            background-color: #343a40;
-            color: #fff;
-            text-align: center;
-            font-size: 1.25rem;
-          }
-      
-          .card-body {
-            padding: 1.5rem;
-            font-family: 'Georgia', serif;
-      
-            .blockquote {
-              font-style: italic;
-      
-              p {
-                font-size: 1.15rem;
-                line-height: 1.6;
-              }
-      
-              .blockquote-footer {
-                margin-top: 0.5rem;
-                font-size: 0.875rem;
-                color: #6c757d;
-      
-                cite {
-                  font-weight: bold;
-                  font-style: normal;
-                }
-              }
-            }
-          }
-        }
-      
-        .col {
-          margin-bottom: 20px;
-        }
-      }
-      
-      @media (max-width: 768px) {
-        .quotes-container {
-          .card {
-            .blockquote p {
-              font-size: 1rem;
-            }
-          }
-        }
-      }
+
+    
       

@@ -7,9 +7,17 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import { Container } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
+import Stack from 'react-bootstrap/Stack';
 //import 'My-sass.scss';
 
 function Home() {
+  const [searchTerm, setSearchTerm] = useState('');
+  
+  const handleInputChange = (e) => {
+      setSearchTerm(e.target.value);
+  };
+
     const books = [
         {
           id: 1,
@@ -53,23 +61,28 @@ function Home() {
       ]
 
 
+
       return (
         <>
         <Container>
-          <div className='Home'>
-            <h1 className='title' style={{
-                textAlign: "center", 
-                marginTop: "20px", 
-                marginBottom: "20px",
-                fontSize: "2.5rem",  
-                color: "gray", 
-                letterSpacing: "1.5px",
-                textShadow: "2px 2px 4px rgba(0, 0, 0, 0.2)",
-                fontFamily: "cursive"
-                
-            }}>
-                Discover Your Next Favorite Book:
-            </h1>
+         <div className='Home'>
+            {/* Search Input */}
+            <input
+                type="text"
+                value={searchTerm}
+                onChange={handleInputChange}
+                placeholder="Search for a book"
+            />
+            
+            {/* Stack for the Search Functionality */}
+            <Stack direction="horizontal" gap={3} className="my-3">
+                <Form.Control className="me-auto" placeholder="Discover your next favorite book..." />
+                <Button variant="secondary">Search</Button>
+                <div className="vr" />
+                <Button variant="outline-danger" onClick={() => setSearchTerm('')}>Reset</Button>
+            </Stack>
+     
+
 
       <Carousel>
           {books.map((b) =>
