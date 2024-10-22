@@ -10,15 +10,10 @@ import { Container } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack';
 //import 'My-sass.scss';
+import Input from './input.js';
 
 function Home() {
-  const [searchTerm, setSearchTerm] = useState('');
-  
-  const handleInputChange = (e) => {
-      setSearchTerm(e.target.value);
-  };
-
-    const books = [
+   {/* const books = [
         {
           id: 1,
           img: "https://m.media-amazon.com/images/S/articles-assets-prod/titleImages/02fa8ee2-6cec-4b2d-99db-7a5d0d8ba282._QL60_FP_.jpg",
@@ -58,32 +53,64 @@ function Home() {
             description: "In The Anxious Generation, social psychologist Jonathan Haidt lays out the facts about the epidemic of teen mental illness that hit many countries at the same time",
             img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1711573377i/171681821.jpg",
         },
-      ]
+      ]*/}
 
-
+      const [term, setTerm] = useState('Anything');
+      const {data:books,isLoading,error}=UseFetch(`https://www.googleapis.com/books/v1/volumes?q=${term}&key=${import.meta.env.VITE_SOME_VALUE}`)
+    
 
       return (
         <>
         <Container>
          <div className='Home'>
-            {/* Search Input */}
-            <input
-                type="text"
-                value={searchTerm}
-                onChange={handleInputChange}
-                placeholder="Search for a book"
-            />
             
-            {/* Stack for the Search Functionality */}
+             Stack for the Search Functionality 
             <Stack direction="horizontal" gap={3} className="my-3">
                 <Form.Control className="me-auto" placeholder="Discover your next favorite book..." />
                 <Button variant="secondary">Search</Button>
                 <div className="vr" />
-                <Button variant="outline-danger" onClick={() => setSearchTerm('')}>Reset</Button>
-            </Stack>
+                <Button variant="outline-danger">Reset</Button>
+            </Stack> 
+            
+            <Navbar />
+				<div className='header'>
+					<div className='overlay'>
+						<h2 className='Heading-text'>Books on {term}</h2>
+
+						<p className='text-md mb-4 px-2 lg:px-0'>
+							“Reading is an act of civilization; it’s one of the greatest acts
+							of civilization because it takes the free raw material of the mind
+							and builds castles of possibilities.”
+						</p>
+
+						<input searchBooks={(search) => setTerm(search)} />
+					</div>
+				</div>
+				<div>
+					{isLoading && (
+						<div className='flex items-center justify-center mt-6 lg:mt-20'>
+							<Circles
+								height='50'
+								width='50'
+								color='brown'
+								ariaLabel='circles-loading'
+								wrapperStyle={{}}
+								wrapperClass=''
+								visible={true}
+							/>
+						</div>
+					)}
+				</div>
+
+				<div className='max-w-7xl mx-auto'>
+					{!isLoading && <BookList books={books} />}
+				</div>
+				{error && (
+					<div className='text-center md:text-2xl font-mono font-bold mt-3'>
+						{error}
+					</div>
+				)}     
      
-
-
       <Carousel>
           {books.map((b) =>
                  (
@@ -94,6 +121,7 @@ function Home() {
                       </Carousel.Caption>
                   </CarouselItem>
                 ))}
+                
           
       </Carousel>
     
