@@ -7,7 +7,8 @@ import { Container } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack';
 
-function Home() {
+
+function Home({addtoCart}) {
     {/*const books = [
         {
             id: 1,
@@ -28,11 +29,6 @@ function Home() {
 
     const recommendedBooks = [
         {
-            id: 4,
-            title: "Code Dependent: Living in the Shadow of AI",
-            img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1706043061i/127282778.jpg",
-        },
-        {
             id: 5,
             title: "The Unicorn Project",
             img: "https://m.media-amazon.com/images/I/91eMffFefqL._AC_UY327_FMwebp_QL65_.jpg",
@@ -47,6 +43,51 @@ function Home() {
             title: "The Anxious Generation",
             img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1711573377i/171681821.jpg",
         },
+        {
+          id: 8,
+          title: "Code Dependent: Living in the Shadow of AI",
+          img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1706043061i/127282778.jpg",
+      },
+        {
+          id: 9,
+          title: "1984",
+          img: "https://m.media-amazon.com/images/I/61f1ytOB-QL._SY522_.jpg",
+      },
+      {
+        id: 10,
+        title: "Animal Farm",
+        img: "https://m.media-amazon.com/images/I/71je3-DsQEL._AC_UY327_FMwebp_QL65_.jpg",
+      },
+      {
+      id: 11,
+      title: "The power of habit",
+      img: "https://m.media-amazon.com/images/I/51u6LIbFoML._AC_UY327_FMwebp_QL65_.jpg",
+      },
+      {
+      id: 12,
+      title: "War",
+      img: "https://m.media-amazon.com/images/I/61ZRi-MxTLL._SY522_.jpg",
+      },
+      {
+        id: 13,
+        title: "The 48 Laws of Power",
+        img: "https://m.media-amazon.com/images/I/611X8GI7hpL._SY522_.jpg",
+      },
+      {
+        id: 14,
+        title: "Fahrenheit 451",
+        img: "https://m.media-amazon.com/images/I/61l8LHt4MeL._SY522_.jpg",
+      },
+      {
+        id: 15,
+        title: "The Idiot",
+        img: "https://m.media-amazon.com/images/I/81GpBL+tl0L._SY522_.jpg",
+      },
+      {
+        id: 16,
+        title: "Crime and Punishment",
+        img: "https://m.media-amazon.com/images/I/51Vg24nKbPL._SY522_.jpg",
+      },
     ];
 
     const [searchQuery, setSearchQuery] = useState('');
@@ -91,20 +132,19 @@ function Home() {
                     </p>
 
     <Row xs={1} md={2} className='g-4'>
-      {(searchQuery ? filteredBooks : recommendedBooks).map((r) => (
-        <Col key={r.id}>
+      {(searchQuery ? filteredBooks : recommendedBooks).map((book) => (
+        <Col key={book.id}>
           <Card>
              <Row>
                     {/* Kolona për imazhin në anën e majtë */}
-                <Col md={6}>
-                  <Card.Img className="cardImg" src={r.img} alt='' style={{height: "300px", width: "width: 160px", objectFit: "cover"}}/>
+                <Col md={4}>
+                  <Card.Img className="cardImg" src={book.img} alt=''/>
                 </Col>
                     {/* Kolona për përmbajtjen në anën e djathtë */}
-                <Col>
-                        <Card.Title>{r.title}</Card.Title>
-                        
-                        <Button variant="warning">Add to the card</Button>
-                    </Col>
+                <Col className='cardTitle'>
+                        <Card.Title>{book.title}</Card.Title> 
+                        <Button onClick={() => addtoCart(book)}>Add to Cart</Button>
+                  </Col>
                   </Row>
                 </Card>
               </Col>

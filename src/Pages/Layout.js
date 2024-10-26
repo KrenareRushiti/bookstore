@@ -6,6 +6,7 @@ import { Outlet } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap';
+import logo from './shopping_cart.png';
 
 
 
@@ -37,11 +38,17 @@ function Layout() {
                 <LinkContainer to="/Contact">
                   <Nav.Link>Contact</Nav.Link>
                 </LinkContainer>
+                <LinkContainer to="/Categories">
+                  <Nav.Link>Categories</Nav.Link>
+                </LinkContainer>
                 <LinkContainer to="/quotes">
                   <Nav.Link>Quotes</Nav.Link>
                 </LinkContainer>
                 <LinkContainer to="/aboutus">
                   <Nav.Link>About Us</Nav.Link>
+                </LinkContainer>
+                <LinkContainer to="/ShoppingCard">
+                  <Nav.Link>My <img src={logo} className='A-logo' alt='' /></Nav.Link>
                 </LinkContainer>
                 <NavDropdown title="Authors" id="offcanvasNavbarDropdown-expand-lg">
                   <NavDropdown.Item href="#action3">Alexandre Dumas</NavDropdown.Item>
