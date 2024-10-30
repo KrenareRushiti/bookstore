@@ -9,12 +9,11 @@ import './Pages/My-sass.scss';
 import Categories from "./Pages/Categories.js";
 import Quotes from "./Pages/Quotes.js";
 import Shopping from "./Pages/Shopping Card.js";
-import { useState } from "react";
-
+import { useState} from "react";
 
 function App () {
   const [cart, setCart] = useState([]);
-
+ 
   const addtoCart = (book) => {
       setCart ([...cart,book]);
   };

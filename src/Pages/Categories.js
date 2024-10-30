@@ -42,6 +42,7 @@ const Categories = ({addtoCart}) => {
         Author: "Pascal Bornet ",
         description: "Discover techniques to boost your career using AI without losing your job",
         img: "https://m.media-amazon.com/images/I/71Sk19m140L._SY522_.jpg",
+        price: "9.99",
     },
     {
         id: 5,
@@ -49,6 +50,7 @@ const Categories = ({addtoCart}) => {
         Author: " Anil Ananthaswamy",
         description: "Explanation of the mathematics that has brought machine learning",
         img: "https://m.media-amazon.com/images/I/81ZtMfYNTeL._SY522_.jpg",
+        price: "8.99",
     },
     {
         id: 6,
@@ -56,6 +58,7 @@ const Categories = ({addtoCart}) => {
         Author: "David Farley",
         description: "It helps you create better software, faster...",
         img: "https://m.media-amazon.com/images/I/81T-gUuACHL._SX385_.jpg",
+        price: "13.99",
     },
     {
         id: 7,
@@ -63,6 +66,7 @@ const Categories = ({addtoCart}) => {
         Author: "Chris Northwood",
         description: "Stay in control as systems grow more complex.",
         img: "https://isbncoverdb.com/images/book-cover-the-full-stack-developer.webp",
+        price: "5.99",
     },
     {
         id: 8,
@@ -70,6 +74,7 @@ const Categories = ({addtoCart}) => {
         Author: "Kate Conger",
         description:"offers a telling lesson in the cost of getting everything you want.",
         img: "https://m.media-amazon.com/images/I/81wKyq40uDL._SX385_.jpg",
+        price: "10.99",
     },
     {
         id: 9,
@@ -77,6 +82,7 @@ const Categories = ({addtoCart}) => {
         Author: "Steven Levy",
         description: "is a fascinating story that begins in early computer research labs",
         img: "https://m.media-amazon.com/images/I/81wvlKDm8oL._SX385_.jpg",
+        price: "12.99",
     },
   ];
 
@@ -211,7 +217,7 @@ const Categories = ({addtoCart}) => {
                                     <Card.Title>{book.title}</Card.Title>
                                     <Card.Text className='card.author'>{book.Author}</Card.Text>
                                     <Card.Text className='card.text'>{book.description}</Card.Text>
-                                    <Button variant= "warning" onClick={() => addtoCart(book)}>Add to Cart</Button>
+                                    <Button className = "buttonOne" onClick={() => addtoCart(book)}>Add to Cart</Button>
                                 </Card.Body>
                             </Card>
                         </div>
@@ -247,7 +253,7 @@ const Categories = ({addtoCart}) => {
                                     <Card.Title>{book.title}</Card.Title>
                                     <Card.Text className='card.author'>{book.Author}</Card.Text>
                                     <Card.Text className='card.text'>{book.description}</Card.Text>
-                                    <Button variant= "warning" onClick={() => addtoCart(book)}>Add to Cart</Button>
+                                    <Button className = "buttonTwo" onClick={() => addtoCart(book)}>Add to Cart</Button>
                                 </Card.Body>
                             </Card>
                         </div>
@@ -283,7 +289,7 @@ const Categories = ({addtoCart}) => {
                                     <Card.Title>{book.title}</Card.Title>
                                     <Card.Text className='card.author'>{book.Author}</Card.Text>
                                     <Card.Text className='card.text'>{book.description}</Card.Text>
-                                    <Button variant= "warning" onClick={() => addtoCart(book)}>Add to Cart</Button>
+                                    <Button className= "buttonThree" onClick={() => addtoCart(book)}>Add to Cart</Button>
                                 </Card.Body>
                             </Card>
                         </div>

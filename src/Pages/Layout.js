@@ -4,9 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Outlet } from "react-router-dom";
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap';
-import logo from './shopping_cart.png';
 
 
 
@@ -31,7 +29,7 @@ function Layout() {
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3 color-black">
+              <Nav className="justify-content-end flex-grow-1 pe-3">
               <LinkContainer to="/">
                   <Nav.Link>Home</Nav.Link>
                 </LinkContainer>
@@ -48,17 +46,8 @@ function Layout() {
                   <Nav.Link>About Us</Nav.Link>
                 </LinkContainer>
                 <LinkContainer to="/ShoppingCard">
-                  <Nav.Link>My <img src={logo} className='A-logo' alt='' /></Nav.Link>
+                  <Nav.Link>My <img src='https://www.iconexperience.com/_img/g_collection_png/standard/48x48/shopping_cart.png' className='A-logo' width={30}/></Nav.Link>
                 </LinkContainer>
-                <NavDropdown title="Authors" id="offcanvasNavbarDropdown-expand-lg">
-                  <NavDropdown.Item href="#action3">Alexandre Dumas</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Alexis Karpouzos</NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">Franz Kafka</NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">Bella Johnson</NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">Fyodor Dostoevsky</NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">George Orwell</NavDropdown.Item>
-                  <NavDropdown.Item href="#action5">George Eliot</NavDropdown.Item>
-                </NavDropdown>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
