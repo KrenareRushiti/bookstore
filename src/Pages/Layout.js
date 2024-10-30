@@ -33,9 +33,6 @@ function Layout() {
               <LinkContainer to="/">
                   <Nav.Link>Home</Nav.Link>
                 </LinkContainer>
-                <LinkContainer to="/Contact">
-                  <Nav.Link>Contact</Nav.Link>
-                </LinkContainer>
                 <LinkContainer to="/Categories">
                   <Nav.Link>Categories</Nav.Link>
                 </LinkContainer>

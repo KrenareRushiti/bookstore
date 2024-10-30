@@ -136,3 +136,27 @@
     }
 }
 
+.aCard {
+    .mainCard {
+
+        width: 80%;
+        border-color: v.$background-color;
+        margin-left: 10%;
+
+}
+}
+
+footer {
+
+    border: 2px solid none;
+    border-radius: 5px;
+    background: rgb(233, 236, 239);
+    margin-top: 20px;
+    padding-top: 10px;
+
+    .FTitle {
+        margin-top: 60px;
+        margin-left: 30%;
+    }
+   
+}

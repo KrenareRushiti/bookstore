@@ -7,6 +7,7 @@ import { Container } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack';
 import './My-sass.scss';
+import Footer from './Footer';
 
 
 function Home({addtoCart}) {
@@ -169,11 +170,14 @@ function Home({addtoCart}) {
                 </Card>
               </Col>
               ))}
-            </Row>
+            </Row>    
             </div>
           </Container>
+          <Footer/>
         </>
     );
+
+  
 }
 
 export default Home;
