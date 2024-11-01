@@ -5,6 +5,10 @@
         margin-bottom: 40px;
     }
 
+    .me-auto {
+
+        box-shadow: v.$shadow;
+    }
     .vr {
         height: 90px;
     }
@@ -150,7 +154,7 @@ footer {
 
     border: 2px solid none;
     border-radius: 5px;
-    background: rgb(233, 236, 239);
+    background: v.$bg-color;
     margin-top: 20px;
     padding-top: 10px;
 
@@ -159,4 +163,29 @@ footer {
         margin-left: 30%;
     }
    
+}
+
+.quotesCard {
+
+    box-shadow: v.$shadow;
+    box-shadow: 10px 10px 1px rgb(26, 63, 113);
+    border-radius: 15px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 10px 10px 20px rgba(26, 63, 113, 0.4);
+    }
+
+   .blockquoteFooter {
+    font-size: 15px;
+    background-color: v.$bg-color;
+    padding-bottom: 5px;
+    padding-left: 7px;
+    border-radius: 5px;
+   }
+
+   .quotesText {
+    font-style: italic; 
+    color: #333;
+   }
 }

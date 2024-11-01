@@ -25,6 +25,7 @@ const Quotes = () => {
   console.log("QUOTES: ", quotes?.data?.data)
   return (
     <>
+    <h1><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZr-pcbCnZllW16TI1VWPGSYspw6pdasOv4AZeavvAwJSrOZ4qRza2ykzyrL-KXnwI6Jo&usqp=CAU' alt=''  style={{ width: "auto", height: "auto", maxWidth: "70px", maxHeight: "70px", marginTop: "40px", marginLeft: "600px" }}/></h1>
       <Container className="quotes-container">
         <Row>
           {
@@ -32,15 +33,14 @@ const Quotes = () => {
 
               <Col sm={12} md={6} lg={6} key={d.id} className='my-3'>
                <Card>
-                  <Card.Header>Quote</Card.Header>
-                     <Card.Body>
+                     <Card.Body className='quotesCard'>
                           <blockquote className="blockquote mb-0">
                             <p>
                               {' '}
-                              <Card.Text>{d.content}</Card.Text>
+                              <Card.Text className='quotesText'>{d.content}</Card.Text>
                           </p>
-                          <footer className="blockquote-footer">
-                              {d.author} <cite title="Source Title">{d.dateAdded}</cite>
+                          <footer className="blockquoteFooter">
+                              -  {d.author || "Unknown"}
                           </footer>
                         </blockquote>
                     </Card.Body>
